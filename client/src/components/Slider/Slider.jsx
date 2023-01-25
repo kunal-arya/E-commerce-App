@@ -27,7 +27,7 @@ export default function slider() {
         },5000)
 
         return () => clearInterval(slider)
-    },[])
+    },[currentSlide])
 
     return (
         <div className="slider">
