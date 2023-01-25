@@ -1,5 +1,9 @@
+import Slider from "../../components/Slider/Slider.jsx";
+
 export default function Home() {
     return (
-        <h1>Home</h1>
+        <div className="home">
+            <Slider />
+        </div>
     )
 }
