@@ -24,7 +24,7 @@ export default function slider() {
     useEffect(() => {
         const slider = setInterval(() => {
             nextSlide()
-        },3000)
+        },5000)
 
         return () => clearInterval(slider)
     },[])
