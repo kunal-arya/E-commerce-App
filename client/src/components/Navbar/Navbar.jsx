@@ -4,9 +4,14 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined"
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined"
 import {Link} from "react-router-dom"
+import {useState} from "react"
+import Cart from '../Cart/Cart'
 import "./Navbar.scss"
 
 export default function Navbar() {
+
+    const [toggleCart,settoggleCart] = useState(false)
+
     return (
         <div className="navbar">
             <div className="wrapper">
@@ -49,13 +54,14 @@ export default function Navbar() {
                         <SearchIcon />
                         <PersonOutlineOutlinedIcon />
                         <FavoriteBorderOutlinedIcon />
-                        <div className="cartIcon">
+                        <div className="cartIcon" onClick={() => settoggleCart(prev => !prev)}>
                             <ShoppingCartOutlinedIcon />
                             <span>0</span>
                         </div>
                     </div>
                 </div>
             </div>
+            {toggleCart && <Cart />}
         </div>
     )
 }
